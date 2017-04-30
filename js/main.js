@@ -13,86 +13,26 @@ $(document).ready(function() {
     
   */
   
-  
-  // People
-  $('#lukeId').click(function() {
-//    $('button').removeClass("selected");
-//    $(this).addClass("selected");
+  $('img').click(function() {
+    url = "https://swapi.co/api/people/1/";
+    var swChar = $(this).children('span').text();
+    var swOptions = {
+      
+    };
     
-    var url = "https://swapi.co/api/people/1/;
+    function getSwapi(data) {
+      $('#content').html('<p>Name: ' + data.name + '</p>');
+      $('#content').append('<p>Birth Year: ' + data.birth_year + '</p>');
+      $('#content').append('<p>Gender: ' + data.gender + '</p>');
+      $('#content').append('<p>Eye Color: ' + data.eye_color + '</p>');
+      $('#content').append('<p>Hair Color: ' + data.hair_color + '</p>');
+      $('#content').append('<p>Weight (kg): ' + data.mass + '</p>');
+      $('#content').append('<p>Height (cm): ' + data.height + '</p>');
+      $('#content').append('<p>Skin Color: ' + data.skin_color + '</p>');
+    };
     
-    function displayData(data) {
-      var photoHTML = '<ul>';
-      
-      
-      
-      $.each(data, function(i, item){
-        photoHTML += '<li>';
-        photoHTML += '<p>Name: ' + item.name + '</p>';
-        photoHTML += '<p>Gender: ' + item.gender + '</p>';
-        photoHTML += '<p>Height: ' + item.height + '</p></li>';
-        
-      });
-      
-      
-      photoHTML += '</ul>';
-      $('#content').html(photoHTML);
-    }
-    
-    $.getJSON(url, displayData);
+    $.getJSON(url, getSwapi);
     
   });
- 
-  
-  // Planets
-  $('#planetsId').click(function() {
-    $('button').removeClass("selected");
-    $(this).addClass("selected");
-    
-    var url = "http://swapi.co/api/planets/";
-    
-    function displayData(data) {
-      var photoHTML = '<ul>';
-      $.each(data.results, function(i, item){
-        photoHTML += '<li class="grid-25 tablet-grid-50">';
-        photoHTML += '<p>Name: ' + item.name + '</p>';
-        photoHTML += '<p>Climate: ' + item.climate + '</p>';
-        photoHTML += '<p>Population: ' + item.population + '</p></li>';
-        
-      });
-      photoHTML += '</ul>';
-      $('#photos').html(photoHTML);
-    }
-    
-    $.getJSON(url, displayData);
-    
-  });
-  
-  
-  // Ships
-  $('#shipsId').click(function() {
-    $('button').removeClass("selected");
-    $(this).addClass("selected");
-    
-    var url = "http://swapi.co/api/starships/";
-    
-    function displayData(data) {
-      var photoHTML = '<ul>';
-      $.each(data.results, function(i, item){
-        photoHTML += '<li class="grid-25 tablet-grid-50">';
-        photoHTML += '<p>Name: ' + item.name + '</p>';
-        photoHTML += '<p>Length: ' + item.length + '</p>';
-        photoHTML += '<p>Crew: ' + item.crew + '</p></li>';
-        
-      });
-      photoHTML += '</ul>';
-      $('#photos').html(photoHTML);
-    }
-    
-    $.getJSON(url, displayData);
-    
-  });
-  
-  
-  
+
 }); // end ready
