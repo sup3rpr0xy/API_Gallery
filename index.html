@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
+  <link href="//cdn.rawgit.com/noelboss/featherlight/1.7.2/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
  
@@ -17,13 +18,11 @@
     <!-- Photos -->
     <main class="flex-container">
       <div class="flex-item">
-        <img src="img/Chewbacca-icon.png" alt="">
-        <span class="hidden-text">chewbacca</span>
+        <img id="chewbaccaId" src="img/Chewbacca-icon.png" alt="">
         <span>Chewbacca</span>
       </div>
       <div class="flex-item">
         <img id="darthId" src="img/Darth-Vader-icon.png" alt="">
-        <span class="hidden-text">darth</span>
         <span>Darth Vader</span>
       </div>
       <div class="flex-item">
@@ -35,21 +34,14 @@
         <span>Luke Skywalker</span>
       </div>
       <div class="flex-item">
-        <img src="img/Obi-Wan-icon.png" alt="">
+        <img id="obiwanId" src="img/Obi-Wan-icon.png" alt="">
         <span>Obi-Wan Kenobi</span>
       </div>
       <div class="flex-item">
-        <img id="r2d2" src="img/R2D2-icon.png" alt="">
+        <img id="artwoId" src="img/R2D2-icon.png" alt="">
         <span>R2 D2</span>
       </div>
     </main>
-  </div>
-  
-  <div id="lightbox">
-    <p>Click to close</p>
-    <div id="content">
-      
-    </div>
   </div>
   
   <script
@@ -57,6 +49,7 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
+  <script src="//cdn.rawgit.com/noelboss/featherlight/1.7.2/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
   
   <!--
       <img src="#" alt="">
