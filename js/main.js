@@ -130,9 +130,9 @@ $(document).ready(function() {
     $.getJSON(url, getSwapi);
   });
   
-  $('#lightbox').click(function() {
-    $(this).hide();
-  });
+//  $('#lightbox').click(function() {
+//    $(this).hide();
+//  });
   
 
 }); // end ready
